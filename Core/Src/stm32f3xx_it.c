@@ -237,6 +237,10 @@ void EXTI3_IRQHandler(void)
   /* USER CODE END EXTI3_IRQn 0 */
   if (LL_EXTI_IsActiveFlag_0_31(LL_EXTI_LINE_3) != RESET)
   {
+	  if(check_button(BUTTON_GPIO_Port, BUTTON_Pin,BUTTON_EXTI_TRIGGER,BUTTON_EXTI_SAMPLES_WINDOW,BUTTON_EXTI_SAMPLES_REQUIRED))
+	  		{
+	  			ledstate^=1;
+	  		}
     LL_EXTI_ClearFlag_0_31(LL_EXTI_LINE_3);
     /* USER CODE BEGIN LL_EXTI_LINE_3 */
 
