@@ -100,7 +100,17 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+		if (ledstate)
+		  	  {
+		  		  LL_GPIO_SetOutputPin(LED_GPIO_Port, LED_Pin);
+		  		  for(uint16_t i=0; i<0xFF00; i++){}
+		  		  LL_GPIO_ResetOutputPin(LED_GPIO_Port, LED_Pin);
+		  		  for(uint16_t i=0; i<0xFF00; i++){}
+		  	  }
+		  	  else
+		  	  {
+		  		  LL_GPIO_ResetOutputPin(LED_GPIO_Port,LED_Pin);
+		  	  }
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
