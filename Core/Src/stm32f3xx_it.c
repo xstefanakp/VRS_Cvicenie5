@@ -22,6 +22,7 @@
 #include "main.h"
 #include "stm32f3xx_it.h"
 
+uint8_t ledstate=0;
 uint8_t check_button(GPIO_TypeDef* PORT, uint8_t PIN,uint8_t edge, uint8_t samples_window, uint8_t samples_required)
 {
 	uint8_t button_state = 0, timeout = 0;
